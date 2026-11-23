@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Barnyard — Pet, Horse & Smallholder Supplies, Northwich (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#f6b92b; --tomato:#d8412a; --oat:#fff5df; --green:#2f7d57; --mud:#2b1a10;
+    --pink:#f4a3b3; --sky:#bfe3ee; --oat-deep:#f3e4c2;
+    --display:"Bagel Fat One",system-ui,sans-serif; --body:"DM Sans",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--mud);background:var(--oat);line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;text-wrap:balance}
+  h2{font-size:clamp(34px,5vw,56px)}
+  .eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:99px;font-weight:700;font-size:16px;text-decoration:none;background:var(--tomato);color:#fff;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px) rotate(-1deg)}
+  .btn.dark{background:var(--mud);color:var(--oat)}
+  .btn.light{background:var(--oat);color:var(--mud)}
+  .btn.yellow{background:var(--yellow);color:var(--mud)}
+  svg.an{display:block;overflow:visible}
+  section{position:relative}
+
+  .concept{background:#fff;color:#2b1a10;font-size:13px;font-weight:700;text-align:center;padding:7px 16px;border-bottom:2px solid #2b1a10}
+  .concept span{font-weight:500;white-space:normal}
+  .concept a{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);background:var(--mud);color:var(--oat);padding:14px 22px;border-radius:22px;font-weight:700;font-size:15px;z-index:50;transition:transform .3s cubic-bezier(.2,1.3,.4,1);max-width:calc(100vw - 32px);text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+  .toast.show{transform:translate(-50%,0)}
+  /* top strip */
+  .strip{background:var(--mud);color:var(--oat);font-size:14px;font-weight:500}
+  .strip .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+  .strip b{color:var(--yellow)}
+  .strip a{text-decoration:none}
+
+  /* header */
+  .head{background:var(--yellow);position:sticky;top:0;z-index:20}
+  .head .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:14px;padding-bottom:12px}
+  .logo{font-size:30px;display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1}
+  .logo .gang{display:flex;align-items:flex-end;gap:.02em;margin-bottom:-.36em}
+  .logo .gang svg{width:.95em;height:.95em}
+  .logo .gang svg:nth-child(odd){transform:translateY(.08em) rotate(-4deg)}
+  .logo .gang svg:nth-child(even){transform:rotate(3deg)}
+  .logo .gang svg:nth-child(3){width:1.18em;height:1.18em}
+  .logo .board{position:relative;z-index:2;background:var(--mud);color:var(--oat);border-radius:.3em;padding:.14em .45em .22em;transform:rotate(-1.5deg);font-family:var(--display);font-size:1em}
+  nav.main{display:flex;gap:26px;font-weight:700;font-size:16px}
+  nav.main a{text-decoration:none;padding:6px 0;border-bottom:3px solid transparent}
+  nav.main a:hover,nav.main a.on{border-color:var(--mud)}
+  .head .btn{padding:11px 20px;font-size:15px}
+  @media(max-width:960px){nav.main{display:none}}
+  @media(max-width:520px){.logo{font-size:24px}.head .btn span{display:none}}
+
+  /* hero */
+  .hero{background:var(--yellow);text-align:center;overflow:hidden;padding:56px 0 0}
+  .hero h1{font-size:clamp(44px,8.2vw,104px);max-width:12ch;margin:0 auto}
+  .hero h1 span{color:var(--tomato);display:block}
+  .hero p{font-size:clamp(17px,1.8vw,21px);max-width:44ch;margin:22px auto 0;font-weight:500}
+  .hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .lineup{display:flex;justify-content:center;align-items:flex-end;gap:clamp(4px,2vw,28px);margin-top:44px;height:clamp(90px,15vw,170px)}
+  .lineup svg{width:clamp(70px,15vw,190px);height:clamp(70px,15vw,190px);flex:none;transform:translateY(100%);animation:pop .7s cubic-bezier(.2,1.4,.4,1) forwards}
+  .lineup svg:nth-child(1){animation-delay:.15s}.lineup svg:nth-child(2){animation-delay:.3s}.lineup svg:nth-child(3){animation-delay:.05s;width:clamp(84px,18vw,230px);height:clamp(84px,18vw,230px)}
+  .lineup svg:nth-child(4){animation-delay:.4s}.lineup svg:nth-child(5){animation-delay:.25s}.lineup svg:nth-child(6){animation-delay:.5s}
+  @keyframes pop{to{transform:translateY(8%)}}
+  .lineup svg:hover{animation:none;transform:translateY(-2%) rotate(-3deg);transition:transform .2s}
+  @media(max-width:560px){.lineup svg:nth-child(5),.lineup svg:nth-child(6){display:none}}
+
+  /* shop by animal */
+  .shop{padding:88px 0 96px}
+  .shop .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .shop .top p{max-width:38ch}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.tiles{grid-template-columns:1fr}}
+  .tile{border-radius:26px;padding:26px 26px 0;min-height:230px;text-decoration:none;position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .tile h3{font-size:34px}
+  .tile p{font-size:15px;font-weight:500;margin-top:8px;max-width:22ch}
+  .tile .go{margin-top:auto;padding:14px 0 22px;font-weight:700;font-size:15px}
+  .tile svg{position:absolute;right:12px;bottom:-46px;width:130px;height:130px;transition:transform .25s cubic-bezier(.2,1.4,.4,1)}
+  .tile:hover svg{transform:translateY(-22px) rotate(-5deg)}
+  .t1{background:var(--green);color:#fff}.t2{background:var(--yellow)}.t3{background:var(--pink)}
+  .t4{background:var(--tomato);color:#fff}.t5{background:var(--sky)}.t6{background:var(--oat-deep)}
+
+  /* dog den */
+  .den{background:var(--mud);color:var(--oat);padding:88px 0 0;overflow:hidden}
+  .den .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  @media(max-width:900px){.den .cols{grid-template-columns:1fr}}
+  .den .eyebrow{color:var(--yellow)}
+  .den h2 span{color:var(--yellow)}
+  .den .lead{margin-top:18px;max-width:42ch;font-size:18px;opacity:.9}
+  .den .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .den .cards{display:grid;gap:16px}
+  .den .card{background:#3b2618;border-radius:22px;padding:24px 26px}
+  .den .card h3{font-size:26px;color:var(--yellow)}
+  .den ul{list-style:none;padding:0;margin-top:12px;display:grid;gap:6px;font-size:16px}
+  .den li{padding-left:26px;position:relative}
+  .den li:before{content:"";position:absolute;left:0;top:.42em;width:12px;height:12px;border-radius:50%;background:var(--tomato)}
+  .den .card:nth-child(2) li:before{background:var(--sky)}
+  .pit{position:relative;height:200px;margin-top:56px}
+  .pit svg.balls{position:absolute;inset:0;width:100%;height:100%}
+  .pit svg.an{position:absolute;left:50%;bottom:36px;width:170px;height:170px;margin-left:-85px;animation:bob 3s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-14px) rotate(3deg)}}
+
+  /* delivery */
+  .deliv{padding:96px 0}
+  .deliv .cols{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+  @media(max-width:900px){.deliv .cols{grid-template-columns:1fr}}
+  .deliv .lead{margin-top:18px;max-width:40ch;font-size:18px}
+  .deliv .cta{margin-top:26px}
+  .prices{display:grid;gap:16px}
+  .price{background:#fff;border-radius:22px;padding:24px 26px;border:2.5px solid var(--mud);box-shadow:6px 6px 0 var(--mud)}
+  .price h3{font-size:24px}
+  .price .sub{font-size:15px;font-weight:500;margin-top:4px;opacity:.8}
+  .price table{width:100%;border-collapse:collapse;margin-top:14px;font-size:16px}
+  .price td{padding:9px 0;border-top:1.5px dashed #d9c9a6}
+  .price td:last-child{text-align:right;font-family:var(--display);font-size:22px}
+  .price .big{font-family:var(--display);font-size:44px;color:var(--tomato);margin-top:8px;line-height:1}
+  .price small{display:block;margin-top:10px;font-size:13.5px;opacity:.75}
+
+  /* offers */
+  .offers{background:var(--tomato);color:#fff;padding:80px 0 88px;overflow:hidden}
+  .offers .top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+  .tickets{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:900px){.tickets{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.tickets{grid-template-columns:1fr}}
+  .ticket{background:var(--yellow);color:var(--mud);border-radius:18px;padding:22px 20px;transition:transform .2s}
+  .ticket:nth-child(odd){transform:rotate(-2deg)}.ticket:nth-child(even){transform:rotate(1.5deg)}
+  .ticket:hover{transform:rotate(0) scale(1.04)}
+  .ticket .save{font-family:var(--display);font-size:40px;line-height:1}
+  .ticket p{font-weight:700;margin-top:8px;font-size:16px;line-height:1.3}
+  .ticket small{display:block;margin-top:6px;font-size:13px;opacity:.75}
+
+  /* brands */
+  .brands{background:var(--mud);color:var(--oat);padding:20px 0;overflow:hidden;white-space:nowrap}
+  .brands .track{display:inline-block;animation:slide 40s linear infinite;font-family:var(--display);font-size:22px}
+  .brands span{margin:0 18px}.brands i{font-style:normal;color:var(--yellow)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* community */
+  .comm{padding:96px 0}
+  .comm .top{max-width:640px;margin-bottom:36px}
+  .comm .top p{margin-top:14px;font-size:18px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.three{grid-template-columns:1fr}}
+  .c{border-radius:26px;padding:28px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column}
+  .c h3{font-size:28px}
+  .c p{margin-top:10px;font-size:16px;max-width:30ch}
+  .c a{margin-top:auto;padding-top:18px;font-weight:700}
+  .c svg{position:absolute;right:8px;bottom:-40px;width:110px;height:110px}
+  .c1{background:var(--yellow)}.c2{background:var(--pink)}.c3{background:var(--sky)}
+
+  /* visit */
+  .visit{background:var(--green);color:#fff;padding:88px 0 0;overflow:hidden}
+  .visit .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:900px){.visit .cols{grid-template-columns:1fr}}
+  .visit .eyebrow{color:var(--yellow)}
+  .hours{margin-top:24px;font-size:19px;width:100%;max-width:420px;border-collapse:collapse}
+  .hours td{padding:12px 0;border-bottom:1.5px dashed rgba(255,255,255,.4)}
+  .hours td:last-child{text-align:right;font-family:var(--display);font-size:24px;color:var(--yellow)}
+  .where{background:var(--oat);color:var(--mud);border-radius:26px;padding:30px;position:relative}
+  .where h3{font-size:30px}
+  .where address{font-style:normal;margin-top:12px;font-size:18px;line-height:1.55}
+  .where .tel{font-family:var(--display);font-size:34px;color:var(--tomato);text-decoration:none;display:block;margin-top:16px}
+  .where .cta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .seven{position:absolute;right:-14px;top:-34px;width:112px;height:112px;border-radius:50%;background:var(--tomato);color:#fff;font-family:var(--display);font-size:20px;line-height:1.05;display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(12deg)}
+  @media(max-width:520px){.seven{right:6px;top:-56px;width:96px;height:96px;font-size:17px}}
+  .visit .peek{display:flex;justify-content:flex-start;gap:20px;height:96px;margin-top:40px}
+  .visit .peek svg{width:120px;height:120px;transform:translateY(6%)}
+
+  footer{background:var(--mud);color:var(--oat);padding:56px 0 36px;font-size:15px}
+  footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+  @media(max-width:800px){footer .cols{grid-template-columns:1fr 1fr}}
+  footer h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+  footer ul{list-style:none;padding:0;display:grid;gap:7px}
+  footer a{text-decoration:none;opacity:.9}footer a:hover{opacity:1;text-decoration:underline}
+  footer .logo{align-items:flex-start;font-size:32px;margin-top:14px}
+  footer .logo .board{background:var(--yellow);color:var(--mud)}
+  footer .tag{margin-top:18px;max-width:28ch;opacity:.8}
+  footer .legal{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,245,223,.2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;opacity:.7}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.lineup svg{transform:translateY(8%)}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="dog" viewBox="0 0 100 100">
+      <ellipse cx="20" cy="52" rx="12" ry="25" transform="rotate(12 20 52)" fill="var(--b)"/>
+      <ellipse cx="80" cy="52" rx="12" ry="25" transform="rotate(-12 80 52)" fill="var(--b)"/>
+      <rect x="22" y="20" width="56" height="90" rx="28" fill="var(--a)"/>
+      <ellipse cx="50" cy="68" rx="19" ry="15" fill="var(--c)"/>
+      <rect x="45" y="72" width="10" height="13" rx="5" fill="var(--t)"/>
+      <ellipse cx="50" cy="61" rx="7.5" ry="5.5" fill="var(--k)"/>
+      <circle cx="37" cy="46" r="3.8" fill="var(--k)"/><circle cx="63" cy="46" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="horse" viewBox="0 0 100 100">
+      <polygon points="26,28 32,0 46,20" fill="var(--a)"/><polygon points="74,28 68,0 54,20" fill="var(--a)"/>
+      <rect x="26" y="14" width="48" height="96" rx="24" fill="var(--a)"/>
+      <rect x="45" y="22" width="10" height="46" rx="5" fill="var(--c)"/>
+      <ellipse cx="50" cy="17" rx="11" ry="8" fill="var(--b)"/>
+      <rect x="22" y="62" width="56" height="48" rx="25" fill="var(--b)"/>
+      <ellipse cx="40" cy="82" rx="3.2" ry="4.8" fill="var(--k)"/><ellipse cx="60" cy="82" rx="3.2" ry="4.8" fill="var(--k)"/>
+      <circle cx="36" cy="44" r="3.8" fill="var(--k)"/><circle cx="64" cy="44" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="hen" viewBox="0 0 100 100">
+      <circle cx="41" cy="20" r="8" fill="var(--t)"/><circle cx="50" cy="14" r="8" fill="var(--t)"/><circle cx="59" cy="20" r="8" fill="var(--t)"/>
+      <rect x="20" y="22" width="60" height="90" rx="30" fill="var(--a)"/>
+      <ellipse cx="50" cy="72" rx="5" ry="8" fill="var(--t)"/>
+      <polygon points="42,52 58,52 50,66" fill="var(--b)"/>
+      <circle cx="38" cy="44" r="3.8" fill="var(--k)"/><circle cx="62" cy="44" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="cat" viewBox="0 0 100 100">
+      <polygon points="20,44 24,10 46,28" fill="var(--a)"/><polygon points="80,44 76,10 54,28" fill="var(--a)"/>
+      <polygon points="26,36 28,20 38,29" fill="var(--t)"/><polygon points="74,36 72,20 62,29" fill="var(--t)"/>
+      <rect x="18" y="26" width="64" height="84" rx="30" fill="var(--a)"/>
+      <polygon points="45,58 55,58 50,64" fill="var(--t)"/>
+      <g stroke="var(--k)" stroke-width="1.6" stroke-linecap="round"><path d="M30 62 12 58M30 66 12 69M70 62 88 58M70 66 88 69"/></g>
+      <circle cx="36" cy="50" r="4.2" fill="var(--k)"/><circle cx="64" cy="50" r="4.2" fill="var(--k)"/>
+    </symbol>
+    <symbol id="rabbit" viewBox="0 0 100 100">
+      <ellipse cx="37" cy="26" rx="9" ry="26" fill="var(--a)"/><ellipse cx="63" cy="26" rx="9" ry="26" fill="var(--a)"/>
+      <ellipse cx="37" cy="28" rx="4" ry="18" fill="var(--t)"/><ellipse cx="63" cy="28" rx="4" ry="18" fill="var(--t)"/>
+      <rect x="24" y="38" width="52" height="72" rx="26" fill="var(--a)"/>
+      <rect x="46" y="70" width="8" height="9" rx="1.5" fill="var(--c)"/>
+      <ellipse cx="50" cy="67" rx="4.5" ry="3.2" fill="var(--t)"/>
+      <circle cx="38" cy="58" r="3.8" fill="var(--k)"/><circle cx="62" cy="58" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="pig" viewBox="0 0 100 100">
+      <polygon points="22,36 26,14 46,26" fill="var(--b)"/><polygon points="78,36 74,14 54,26" fill="var(--b)"/>
+      <rect x="18" y="24" width="64" height="86" rx="32" fill="var(--a)"/>
+      <ellipse cx="50" cy="64" rx="16" ry="11" fill="var(--b)"/>
+      <ellipse cx="44" cy="64" rx="2.5" ry="4" fill="var(--k)"/><ellipse cx="56" cy="64" rx="2.5" ry="4" fill="var(--k)"/>
+      <circle cx="36" cy="46" r="3.8" fill="var(--k)"/><circle cx="64" cy="46" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <!-- the gang in their standard colours -->
+    <symbol id="g-dog" viewBox="0 0 100 100"><g style="--a:#b9652a;--b:#7a3d15;--c:#fff5df;--k:#2b1a10;--t:#e8607a"><use href="#dog"/></g></symbol>
+    <symbol id="g-hen" viewBox="0 0 100 100"><g style="--a:#fffaf0;--b:#f08a1d;--c:#fff;--k:#2b1a10;--t:#d8412a"><use href="#hen"/></g></symbol>
+    <symbol id="g-horse" viewBox="0 0 100 100"><g style="--a:#c9502a;--b:#8e3418;--c:#fff5df;--k:#2b1a10;--t:#fff"><use href="#horse"/></g></symbol>
+    <symbol id="g-pig" viewBox="0 0 100 100"><g style="--a:#f4a3b3;--b:#e27d92;--c:#fff;--k:#2b1a10;--t:#fff"><use href="#pig"/></g></symbol>
+    <symbol id="g-cat" viewBox="0 0 100 100"><g style="--a:#5f6f7d;--b:#5f6f7d;--c:#fff;--k:#2b1a10;--t:#f4a3b3"><use href="#cat"/></g></symbol>
+    <symbol id="g-rabbit" viewBox="0 0 100 100"><g style="--a:#fffaf0;--b:#fff;--c:#fff;--k:#2b1a10;--t:#f4a3b3"><use href="#rabbit"/></g></symbol>
+  </defs>
+</svg>
+
+<div class="concept"><svg style="height:.85em;width:auto;vertical-align:-.05em;margin-right:.45em" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg>Concept design by Pete Owen Design. Not the live Barnyard website. <a href="index.html" style="color:inherit;font-weight:700">Back to the start</a> <span>Three pages are built: <a href="design.html">Home</a> · <a href="dog-den.html">Dog Den</a> · <a href="delivery.html">Delivery</a>. Other links are placeholders.</span></div>
+<div class="strip"><div class="wrap">
+  <span><b>Open 7 days</b> · Mon–Fri 9–5 · Sat 9–4.30 · Sun 9–1</span>
+  <span>Cosgrove Business Park, Anderton, Northwich · <a href="tel:+441606871445"><b>01606 871445</b></a></span>
+</div></div>
+
+<header class="head"><div class="wrap">
+  <a class="logo" href="design.html" aria-label="Barnyard home">
+    <span class="gang">
+      <svg class="an"><use href="#g-dog"/></svg><svg class="an"><use href="#g-hen"/></svg><svg class="an"><use href="#g-horse"/></svg><svg class="an"><use href="#g-pig"/></svg><svg class="an"><use href="#g-cat"/></svg><svg class="an"><use href="#g-rabbit"/></svg>
+    </span>
+    <span class="board">Barnyard</span>
+  </a>
+  <nav class="main">
+    <a href="index.html#shop">Horse</a><a href="index.html#shop">Dog</a><a href="index.html#shop">Pets &amp; Poultry</a><a href="dog-den.html">Dog Den</a><a href="delivery.html">Delivery</a><a href="index.html#offers">Offers</a><a href="index.html#visit">Visit</a>
+  </nav>
+  <a class="btn dark" href="tel:+441606871445">Call <span>to order</span></a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Every animal welcome. <span>Yes, even that one.</span></h1>
+    <p>Feed, bedding, toys and treats for horses, dogs, hens and the whole gang. Family owned, open seven days, with a ball pit for the dog next door.</p>
+    <div class="cta">
+      <a class="btn" href="delivery.html">Order for delivery</a>
+      <a class="btn dark" href="dog-den.html">Book the Dog Den</a>
+    </div>
+  </div>
+  <div class="lineup" aria-hidden="true">
+    <svg class="an"><use href="#g-dog"/></svg><svg class="an"><use href="#g-hen"/></svg><svg class="an"><use href="#g-horse"/></svg><svg class="an"><use href="#g-pig"/></svg><svg class="an"><use href="#g-cat"/></svg><svg class="an"><use href="#g-rabbit"/></svg>
+  </div>
+</section>
+
+<section class="shop" id="shop"><div class="wrap">
+  <div class="top">
+    <div><p class="eyebrow">Shop by animal</p><h2>Who are you<br>feeding today?</h2></div>
+    <p>If we don't have it on the shelf, ask. Deliveries arrive every week, so we can usually get it in quickly.</p>
+  </div>
+  <div class="tiles">
+    <a class="tile t1" href="#"><h3>Horses</h3><p>Feed, bedding, haylage, supplements, tack and rugs.</p><span class="go">See equestrian →</span><svg class="an"><use href="#g-horse"/></svg></a>
+    <a class="tile t2" href="#"><h3>Dogs</h3><p>Dry, wet and raw food, treats and lots of toys.</p><span class="go">See dogs →</span><svg class="an"><use href="#g-dog"/></svg></a>
+    <a class="tile t3" href="#"><h3>Cats</h3><p>Food, litter and the things they'll ignore for the box.</p><span class="go">See cats →</span><svg class="an"><use href="#g-cat"/></svg></a>
+    <a class="tile t4" href="#"><h3>Small animals</h3><p>Feed, hay and bedding for rabbits, guinea pigs and friends.</p><span class="go">See small animals →</span><svg class="an"><use href="#g-rabbit"/></svg></a>
+    <a class="tile t5" href="#"><h3>Poultry &amp; birds</h3><p>Hens, wild birds, aviary and racing pigeon.</p><span class="go">See poultry &amp; birds →</span><svg class="an"><use href="#g-hen"/></svg></a>
+    <a class="tile t6" href="#"><h3>Smallholding</h3><p>Goats, sheep, pigs, alpacas and more.</p><span class="go">See livestock →</span><svg class="an"><use href="#g-pig"/></svg></a>
+  </div>
+</div></section>
+
+<section class="den" id="den">
+  <div class="wrap"><div class="cols">
+    <div>
+      <p class="eyebrow">Barnyard Dog Den · right next door</p>
+      <h2>No mud. No wind. No rain. <span>Just a huge ball pit.</span></h2>
+      <p class="lead">A safe indoor play space for puppies and dogs of all ages, plus a self-serve dog wash for the muddy walks you did go on.</p>
+      <div class="cta">
+        <a class="btn yellow" href="https://www.barnyarddogden.co.uk/book-online">Book a play session</a>
+        <a class="btn light" href="dog-den.html">About the Dog Den</a>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Indoor play area</h3><ul>
+        <li>Secure, fully enclosed, soft flooring</li><li>Huge ball pit and enrichment toys</li><li>Puppies from 12 weeks, all breeds and sizes</li><li>Private sessions available</li><li>Wheelchair accessible</li></ul></div>
+      <div class="card"><h3>Self-serve dog wash</h3><ul>
+        <li>No booking needed, just turn up</li><li>Warm water, shampoo and dryer included</li><li>All the mess stays here, not in your bathroom</li></ul></div>
+    </div>
+  </div></div>
+  <div class="pit" aria-hidden="true">
+    <svg class="an" style="--a:#b9652a;--b:#7a3d15;--c:#fff5df;--k:#2b1a10;--t:#e8607a"><use href="#dog"/></svg>
+    <svg class="balls" id="balls" preserveAspectRatio="none"></svg>
+  </div>
+</section>
+
+<section class="deliv" id="delivery"><div class="wrap"><div class="cols">
+  <div>
+    <p class="eyebrow">Local delivery</p>
+    <h2>Can't carry twenty bales? We can.</h2>
+    <p class="lead">Two delivery services run from the shop: a small one for pet supplies, and the main run for horse feed, bedding and bulk orders. Sharing a yard? Club together on one drop.</p>
+    <div class="cta" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="tel:+441606871445">Call 01606 871445 to order</a><a class="btn dark" href="delivery.html">How delivery works</a></div>
+  </div>
+  <div class="prices">
+    <div class="price">
+      <h3>Pet delivery</h3><div class="sub">Dog, cat, wild bird and small animal supplies · up to 8 miles</div>
+      <div class="big">£1.75</div>
+    </div>
+    <div class="price">
+      <h3>Main delivery</h3><div class="sub">Horse feed, bedding and bulk orders · by distance from CW9 6FY</div>
+      <table>
+        <tr><td>Up to 8 miles</td><td>£9.50</td></tr>
+        <tr><td>8 to 12 miles</td><td>£11.50</td></tr>
+        <tr><td>12 to 15 miles</td><td>£19</td></tr>
+      </table>
+      <small>Minimum order £45 up to 12 miles, £80 for 12 to 15 miles.</small>
+    </div>
+  </div>
+</div></div></section>
+
+<section class="offers" id="offers"><div class="wrap">
+  <div class="top"><div><p class="eyebrow">This week at Barnyard</p><h2>Offers worth<br>wagging about.</h2></div><a class="btn light" href="#">All offers &amp; events</a></div>
+  <div class="tickets">
+    <div class="ticket"><div class="save">£6</div><p>Sundown Sun-E-Bed Straw Pellets</p><small>Collection only</small></div>
+    <div class="ticket"><div class="save">20% off</div><p>NAF Seaweed 10kg</p><small>Horse supplements</small></div>
+    <div class="ticket"><div class="save">30% off</div><p>Hy Saddle Pads</p><small>Equestrian</small></div>
+    <div class="ticket"><div class="save">10% off</div><p>Ethos Original Bedding</p><small>Animal bedding</small></div>
+  </div>
+</div></section>
+
+<div class="brands" aria-label="Brands we stock"><div class="track">
+  <span>Baileys</span><i>✦</i><span>TopSpec</span><i>✦</i><span>Dengie</span><i>✦</i><span>Spillers</span><i>✦</i><span>Allen &amp; Page</span><i>✦</i><span>Dodson &amp; Horrell</span><i>✦</i><span>Thunderbrook</span><i>✦</i><span>Skinners</span><i>✦</i><span>Arden Grange</span><i>✦</i><span>Harringtons</span><i>✦</i><span>Forthglade</span><i>✦</i><span>Baileys</span><i>✦</i><span>TopSpec</span><i>✦</i><span>Dengie</span><i>✦</i><span>Spillers</span><i>✦</i><span>Allen &amp; Page</span><i>✦</i><span>Dodson &amp; Horrell</span><i>✦</i><span>Thunderbrook</span><i>✦</i><span>Skinners</span><i>✦</i><span>Arden Grange</span><i>✦</i><span>Harringtons</span><i>✦</i><span>Forthglade</span><i>✦</i>
+</div></div>
+
+<section class="comm"><div class="wrap">
+  <div class="top"><p class="eyebrow">More than a shop</p><h2>Join the Barnyard family.</h2><p>We're independent and family owned, and we like knowing our customers by name. Their animals' names too.</p></div>
+  <div class="three">
+    <div class="c c1"><h3>Loyalty Club</h3><p>A point for every pound you spend in store. Points mean pounds off.</p><a href="#">Join the club →</a><svg class="an"><use href="#g-dog"/></svg></div>
+    <div class="c c2"><h3>Barnyard Buddies</h3><p>Love your animals and love sharing them? Join our team of customer ambassadors for perks and early news.</p><a href="#">Become a Buddy →</a><svg class="an"><use href="#g-pig"/></svg></div>
+    <div class="c c3"><h3>Donation Station</h3><p>Drop off donations in store for Willowsway Cat Rescue, Tails Animal Rescue Northwich and Cosy Cats.</p><a href="#">How to help →</a><svg class="an"><use href="#g-cat"/></svg></div>
+  </div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <div class="cols">
+    <div>
+      <p class="eyebrow">Come and say hello</p>
+      <h2>Pop in. Bring the dog.</h2>
+      <table class="hours">
+        <tr><td>Monday to Friday</td><td>9 – 5</td></tr>
+        <tr><td>Saturday</td><td>9 – 4.30</td></tr>
+        <tr><td>Sunday</td><td>9 – 1</td></tr>
+      </table>
+    </div>
+    <div class="where">
+      <div class="seven">Open<br>7 days</div>
+      <h3>Where to find us</h3>
+      <address>Unit 76, Cosgrove Business Park<br>Anderton, Northwich<br>Cheshire CW9 6FY</address>
+      <a class="tel" href="tel:+441606871445">01606 871445</a>
+      <div class="cta"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=CW9+6FY">Get directions</a><a class="btn dark" href="#">Contact us</a></div>
+    </div>
+  </div>
+  <div class="peek" aria-hidden="true"><svg class="an"><use href="#g-rabbit"/></svg><svg class="an"><use href="#g-hen"/></svg></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div>
+      <a class="logo" href="design.html"><span class="board">Barnyard</span></a>
+      <p class="tag">Independent, family owned pet, horse and smallholder supplies in Northwich, Cheshire.</p>
+    </div>
+    <div><h4>Shop</h4><ul><li><a href="#">Horses</a></li><li><a href="#">Dogs</a></li><li><a href="#">Cats &amp; small animals</a></li><li><a href="#">Poultry &amp; birds</a></li><li><a href="#">Smallholding</a></li></ul></div>
+    <div><h4>Barnyard</h4><ul><li><a href="dog-den.html">Dog Den</a></li><li><a href="delivery.html">Delivery</a></li><li><a href="#">Offers &amp; events</a></li><li><a href="#">Loyalty Club</a></li><li><a href="#">Job vacancies</a></li></ul></div>
+    <div><h4>Follow</h4><ul><li><a href="https://facebook.com/BarnYardCheshire">Facebook</a></li><li><a href="https://instagram.com/BarnyardCheshire">Instagram</a></li><li><a href="https://www.tiktok.com/@barnyardcheshire">TikTok</a></li></ul></div>
+  </div>
+  <div class="legal"><span>Concept design for discussion. Not the live Barnyard website.</span><span>Design by Pete Owen Design</span></div>
+</div></footer>
+
+<script>
+  // Fill every ball pit with a repeatable scatter of coloured balls.
+  document.querySelectorAll('svg.balls').forEach(function(svg,i){
+    var w=1600, h=200, seed=7+i*13, out='';
+    svg.setAttribute('viewBox','0 0 '+w+' '+h);
+    svg.setAttribute('preserveAspectRatio','xMidYMax slice');
+    var cols=['#f6b92b','#d8412a','#bfe3ee','#f4a3b3','#2f7d57','#fff5df'];
+    function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+    for(var row=0;row<4;row++){
+      for(var x=-20;x<w+40;x+=46){
+        var r=24+rnd()*10, cx=x+rnd()*20, cy=h-18-row*34+rnd()*14+(row===3?16:0);
+        out+='<circle cx="'+cx.toFixed(0)+'" cy="'+cy.toFixed(0)+'" r="'+r.toFixed(0)+'" fill="'+cols[Math.floor(rnd()*cols.length)]+'"/>';
+      }
+    }
+    svg.innerHTML=out;
+  });
+</script>
+<div class="toast" id="toast" role="status">That page isn't built yet. This concept has Home, Dog Den and Delivery.</div>
+<script>
+  // Placeholder links (href="#") explain themselves instead of doing nothing.
+  (function(){
+    var t=document.getElementById('toast'), timer;
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a[href="#"]'); if(!a) return;
+      e.preventDefault(); t.classList.add('show');
+      clearTimeout(timer); timer=setTimeout(function(){t.classList.remove('show')},3200);
+    });
+  })();
+</script>
+</body>
+</html>
