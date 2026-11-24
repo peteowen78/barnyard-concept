@@ -50,6 +50,12 @@
   .btn:hover{background:#2B3A32}
   .ghost{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid var(--ink);border-radius:var(--r);padding:10px 17px}
   .ghost:hover{background:var(--card)}
+  .ideas{margin:0 0 72px}
+  .idea-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .idea{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px}
+  .idea h3{font-size:20px;line-height:1.25;margin:0 0 6px}
+  .idea p{margin:0;color:var(--soft);font-size:16px}
+  @media (max-width:760px){.idea-list{grid-template-columns:1fr}}
   footer{border-top:1px solid var(--line);padding:26px 0 52px;font-size:15px;color:var(--soft)}
   footer p{margin:0 0 8px;max-width:70ch}
   footer .pod{height:13px;width:auto;vertical-align:-1px;margin-right:8px;color:var(--ink)}
@@ -86,22 +92,38 @@
     </a>
     <a class="route dark" href="#designs">
       <span class="kicker">Design</span>
-      <strong>A design concept</strong>
-      <span class="rtext">A working homepage showing how your new website could look.</span>
-      <span class="go">See the design</span>
+      <strong>Three design ideas</strong>
+      <span class="rtext">Three different ways your new website could look. Each one is a working homepage you can scroll through.</span>
+      <span class="go">See the designs</span>
     </a>
 </div>
 
 <section id="designs">
-  <h2>A design concept</h2>
-  <p class="sub">Open it to scroll through the whole page. Nothing here is final, and nothing on your current website has been changed.</p>
-  <div class="grid single">
+  <h2>Three design ideas</h2>
+  <p class="sub">Open any of them to scroll through the whole page. Nothing here is final, and nothing on your current website has been changed.</p>
+  <div class="grid ">
     <article class="design">
       <a class="shot" href="design.html"><img src="designs/thumb-1.jpg" alt="The first screen of Barnyard concept" width="960" height="600" loading="lazy"></a>
       <div class="dtext">
         <h3>Barnyard concept</h3>
         <p>A new look for the shop, with its own pages for the Dog Den and for delivery.</p>
         <p class="links"><a class="btn" href="design.html">Open this design</a><a class="ghost" href="dog-den.html">Dog Den page</a><a class="ghost" href="delivery.html">Delivery page</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/directions-fun.html"><img src="designs/thumb-2.jpg" alt="The first screen of Three looks with the fun kept in" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Three looks with the fun kept in</h3>
+        <p>One board with three options that keep your animals: The Whole Gang, Serious feed and silly animals, and Animal Noises.</p>
+        <p class="links"><a class="btn" href="designs/directions-fun.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/directions.html"><img src="designs/thumb-3.jpg" alt="The first screen of Three first looks" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Three first looks</h3>
+        <p>One board with three options: The Feed Merchant, Muddy Boots, and Field and Stable.</p>
+        <p class="links"><a class="btn" href="designs/directions.html">Open this design</a></p>
       </div>
     </article>
   </div>

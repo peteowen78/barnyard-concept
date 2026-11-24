@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barnyard — brand directions, round two (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Besley:wght@500;700;900&family=Work+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{font-family:Inter,system-ui,sans-serif;background:#f3f2ef;color:#1c1c1a;padding:40px 24px 64px;line-height:1.5}
+  .wrap{max-width:1440px;margin:0 auto}
+  header.page{margin-bottom:32px;max-width:760px}
+  header.page p.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#77756f;margin-bottom:8px}
+  header.page h1{font-size:30px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  header.page p{color:#55534e;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+  @media(max-width:1100px){.grid{grid-template-columns:1fr}}
+  .dir{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 28px rgba(0,0,0,.06)}
+  .label{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#77756f;border-bottom:1px solid #eceae5}
+  .label b{color:#1c1c1a;font-weight:600}
+  .rec{background:#1c1c1a;color:#fff;border-radius:99px;padding:3px 10px;font-size:10px;letter-spacing:.1em}
+  .logo{height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;position:relative;overflow:hidden}
+  .swatches{display:flex;height:56px}
+  .swatches span{flex:1;display:flex;align-items:flex-end;padding:6px 8px;font-size:10px;letter-spacing:.04em}
+  .hero{padding:32px 28px;min-height:330px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+  .nav{display:flex;gap:16px;font-size:12px;margin-bottom:26px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:11px 20px;font-size:14px;margin-top:20px;margin-right:8px}
+  .notes{padding:22px 20px 24px;font-size:14px;color:#3b3a36;border-top:1px solid #eceae5}
+  .notes h3{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#77756f;font-weight:600;margin:14px 0 4px}
+  .notes h3:first-child{margin-top:0}
+  .notes em{font-style:normal;color:#1c1c1a;font-weight:500}
+  svg.an{display:block;overflow:visible}
+
+  /* A — The Whole Gang */
+  .dA .logo{background:#f6b92b}
+  .dA .gang{display:flex;align-items:flex-end;gap:2px;margin-bottom:-22px}
+  .dA .gang svg{width:58px;height:58px}
+  .dA .gang svg:nth-child(odd){transform:translateY(5px) rotate(-4deg)}
+  .dA .gang svg:nth-child(even){transform:rotate(3deg)}
+  .dA .gang svg:nth-child(3){width:72px;height:72px}
+  .dA .board{position:relative;z-index:2;background:#2b1a10;color:#fff5df;border-radius:18px;padding:10px 26px 14px;transform:rotate(-1.5deg)}
+  .dA .word{font-family:"Bagel Fat One",sans-serif;font-size:58px;line-height:1;letter-spacing:.01em}
+  .dA .sub{font-family:"DM Sans",sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:16px;color:#2b1a10}
+  .dA .hero{background:#fff5df;color:#2b1a10;font-family:"DM Sans",sans-serif}
+  .dA .hero h2{font-family:"Bagel Fat One",sans-serif;font-size:42px;line-height:1.02;font-weight:400}
+  .dA .hero h2 span{color:#d8412a}
+  .dA .hero p{margin-top:14px;font-size:15px;max-width:30ch}
+  .dA .btn{background:#d8412a;color:#fff;border-radius:99px;font-weight:700}
+  .dA .btn.alt{background:#2b1a10;color:#fff5df}
+  .dA .nav{font-weight:700}
+  .dA .peek{position:absolute;right:-6px;bottom:-34px;width:150px;height:150px;transform:rotate(-8deg)}
+
+  /* B — Feed Merchant with a wink */
+  .dB .logo{background:#1f3a2c;color:#f1e9d6}
+  .dB .stampwrap{position:relative}
+  .dB .stamp{border:2px solid #f1e9d6;padding:6px;border-radius:4px;background:#1f3a2c;position:relative;z-index:2}
+  .dB .stamp>div{border:1px solid #f1e9d6;padding:16px 26px 14px;border-radius:2px}
+  .dB .word{font-family:Besley,serif;font-weight:900;font-size:46px;letter-spacing:.04em;line-height:1}
+  .dB .sub{font-family:"Work Sans",sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-top:10px}
+  .dB .rule{display:flex;align-items:center;gap:10px;margin-top:10px;font-family:Besley,serif;font-size:12px;letter-spacing:.16em}
+  .dB .rule:before,.dB .rule:after{content:"";flex:1;height:1px;background:#f1e9d6;opacity:.6}
+  .dB .hen{position:absolute;width:56px;height:56px;top:-40px;right:34px;z-index:1}
+  .dB .horse{position:absolute;width:66px;height:66px;top:-48px;left:30px;z-index:1;transform:rotate(-5deg)}
+  .dB .dog{position:absolute;width:54px;height:54px;top:-36px;left:50%;margin-left:-20px;z-index:1;transform:rotate(4deg)}
+  .dB .hero{background:#f1e9d6;color:#1f3a2c;font-family:"Work Sans",sans-serif}
+  .dB .hero h2{font-family:Besley,serif;font-weight:700;font-size:36px;line-height:1.08;letter-spacing:-.01em;max-width:13ch}
+  .dB .hero h2 span{color:#c9411f}
+  .dB .hero p{margin-top:14px;font-size:15px;max-width:32ch}
+  .dB .btn{background:#c9411f;color:#fff;border-radius:3px;font-weight:600}
+  .dB .btn.alt{background:none;color:#1f3a2c;border:1.5px solid #1f3a2c}
+  .dB .nav{font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+  .sticker{position:absolute;font-family:Besley,serif;font-weight:700;font-size:13px;line-height:1.1;text-align:center;display:flex;align-items:center;justify-content:center;border-radius:50%;width:92px;height:92px;padding:10px}
+  .dB .s1{background:#f2b632;color:#1f3a2c;right:22px;top:64px;transform:rotate(12deg)}
+  .dB .s2{background:#c9411f;color:#fff;right:74px;top:150px;transform:rotate(-9deg);width:84px;height:84px;font-size:12px}
+
+  /* C — Animal Noises */
+  .dC .logo{background:#2447d6;color:#fff}
+  .dC .bubble{background:#fff;color:#16181f;border-radius:26px;padding:14px 28px 18px;position:relative}
+  .dC .bubble:after{content:"";position:absolute;left:44px;bottom:-18px;border:12px solid transparent;border-top:20px solid #fff;border-left-width:0;border-right-width:22px}
+  .dC .word{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:56px;letter-spacing:-.04em;line-height:1}
+  .dC .sub{font-family:"DM Sans",sans-serif;font-weight:700;font-size:13px;margin-top:30px}
+  .dC .hero{padding:0;font-family:"DM Sans",sans-serif;color:#16181f;background:#fff}
+  .dC .noises{display:grid;grid-template-columns:1fr 1fr}
+  .dC .noise{height:112px;position:relative;overflow:hidden;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.03em;padding:14px 16px}
+  .dC .noise svg{position:absolute;right:10px;bottom:-22px;width:78px;height:78px}
+  .dC .txt{padding:22px 28px 28px}
+  .dC .txt h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:30px;line-height:1.02;letter-spacing:-.03em}
+  .dC .txt p{margin-top:10px;font-size:15px}
+  .dC .btn{background:#16181f;color:#fff;border-radius:10px;font-weight:700;margin-top:16px}
+  .dC .btn.alt{background:#f24a2e}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live Barnyard website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+
+<!-- Animal characters, drawn once and reused. Colours are set where each is used. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="dog" viewBox="0 0 100 100">
+      <ellipse cx="20" cy="52" rx="12" ry="25" transform="rotate(12 20 52)" fill="var(--b)"/>
+      <ellipse cx="80" cy="52" rx="12" ry="25" transform="rotate(-12 80 52)" fill="var(--b)"/>
+      <rect x="22" y="20" width="56" height="90" rx="28" fill="var(--a)"/>
+      <ellipse cx="50" cy="68" rx="19" ry="15" fill="var(--c)"/>
+      <rect x="45" y="72" width="10" height="13" rx="5" fill="var(--t)"/>
+      <ellipse cx="50" cy="61" rx="7.5" ry="5.5" fill="var(--k)"/>
+      <circle cx="37" cy="46" r="3.8" fill="var(--k)"/><circle cx="63" cy="46" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="horse" viewBox="0 0 100 100">
+      <polygon points="26,28 32,0 46,20" fill="var(--a)"/><polygon points="74,28 68,0 54,20" fill="var(--a)"/>
+      <rect x="26" y="14" width="48" height="96" rx="24" fill="var(--a)"/>
+      <rect x="45" y="22" width="10" height="46" rx="5" fill="var(--c)"/>
+      <ellipse cx="50" cy="17" rx="11" ry="8" fill="var(--b)"/>
+      <rect x="22" y="62" width="56" height="48" rx="25" fill="var(--b)"/>
+      <ellipse cx="40" cy="82" rx="3.2" ry="4.8" fill="var(--k)"/><ellipse cx="60" cy="82" rx="3.2" ry="4.8" fill="var(--k)"/>
+      <circle cx="36" cy="44" r="3.8" fill="var(--k)"/><circle cx="64" cy="44" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="hen" viewBox="0 0 100 100">
+      <circle cx="41" cy="20" r="8" fill="var(--t)"/><circle cx="50" cy="14" r="8" fill="var(--t)"/><circle cx="59" cy="20" r="8" fill="var(--t)"/>
+      <rect x="20" y="22" width="60" height="90" rx="30" fill="var(--a)"/>
+      <ellipse cx="50" cy="72" rx="5" ry="8" fill="var(--t)"/>
+      <polygon points="42,52 58,52 50,66" fill="var(--b)"/>
+      <circle cx="38" cy="44" r="3.8" fill="var(--k)"/><circle cx="62" cy="44" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="cat" viewBox="0 0 100 100">
+      <polygon points="20,44 24,10 46,28" fill="var(--a)"/><polygon points="80,44 76,10 54,28" fill="var(--a)"/>
+      <polygon points="26,36 28,20 38,29" fill="var(--t)"/><polygon points="74,36 72,20 62,29" fill="var(--t)"/>
+      <rect x="18" y="26" width="64" height="84" rx="30" fill="var(--a)"/>
+      <polygon points="45,58 55,58 50,64" fill="var(--t)"/>
+      <g stroke="var(--k)" stroke-width="1.6" stroke-linecap="round"><path d="M30 62 12 58M30 66 12 69M70 62 88 58M70 66 88 69"/></g>
+      <circle cx="36" cy="50" r="4.2" fill="var(--k)"/><circle cx="64" cy="50" r="4.2" fill="var(--k)"/>
+    </symbol>
+    <symbol id="rabbit" viewBox="0 0 100 100">
+      <ellipse cx="37" cy="26" rx="9" ry="26" fill="var(--a)"/><ellipse cx="63" cy="26" rx="9" ry="26" fill="var(--a)"/>
+      <ellipse cx="37" cy="28" rx="4" ry="18" fill="var(--t)"/><ellipse cx="63" cy="28" rx="4" ry="18" fill="var(--t)"/>
+      <rect x="24" y="38" width="52" height="72" rx="26" fill="var(--a)"/>
+      <rect x="46" y="70" width="8" height="9" rx="1.5" fill="var(--c)"/>
+      <ellipse cx="50" cy="67" rx="4.5" ry="3.2" fill="var(--t)"/>
+      <circle cx="38" cy="58" r="3.8" fill="var(--k)"/><circle cx="62" cy="58" r="3.8" fill="var(--k)"/>
+    </symbol>
+    <symbol id="pig" viewBox="0 0 100 100">
+      <polygon points="22,36 26,14 46,26" fill="var(--b)"/><polygon points="78,36 74,14 54,26" fill="var(--b)"/>
+      <rect x="18" y="24" width="64" height="86" rx="32" fill="var(--a)"/>
+      <ellipse cx="50" cy="64" rx="16" ry="11" fill="var(--b)"/>
+      <ellipse cx="44" cy="64" rx="2.5" ry="4" fill="var(--k)"/><ellipse cx="56" cy="64" rx="2.5" ry="4" fill="var(--k)"/>
+      <circle cx="36" cy="46" r="3.8" fill="var(--k)"/><circle cx="64" cy="46" r="3.8" fill="var(--k)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="page">
+    <p class="kicker">Barnyard Cheshire · brand refresh · concept stage · round two</p>
+    <h1>Three directions, with the fun put back</h1>
+    <p>Barnyard's current logo is a gang of animals peering over a sign, and that warmth is worth keeping. These three keep the character but draw it properly: one simple, consistent set of animals instead of clip-art, plus copy with a sense of humour.</p>
+  </header>
+
+  <div class="grid">
+
+    <section class="dir dA">
+      <div class="label"><b>A · The Whole Gang</b><span class="rec">Recommended</span></div>
+      <div class="logo">
+        <div class="gang">
+          <svg class="an" style="--a:#b9652a;--b:#7a3d15;--c:#fff5df;--k:#2b1a10;--t:#e8607a"><use href="#dog"/></svg>
+          <svg class="an" style="--a:#fff5df;--b:#f08a1d;--c:#fff;--k:#2b1a10;--t:#d8412a"><use href="#hen"/></svg>
+          <svg class="an" style="--a:#c9502a;--b:#8e3418;--c:#fff5df;--k:#2b1a10;--t:#fff"><use href="#horse"/></svg>
+          <svg class="an" style="--a:#f4a3b3;--b:#e27d92;--c:#fff;--k:#2b1a10;--t:#fff"><use href="#pig"/></svg>
+          <svg class="an" style="--a:#5f6f7d;--b:#5f6f7d;--c:#fff;--k:#2b1a10;--t:#f4a3b3"><use href="#cat"/></svg>
+          <svg class="an" style="--a:#fff5df;--b:#fff;--c:#fff;--k:#2b1a10;--t:#f4a3b3"><use href="#rabbit"/></svg>
+        </div>
+        <div class="board"><div class="word">Barnyard</div></div>
+        <div class="sub">Pets · Horses · Hens · Whatever you've got</div>
+      </div>
+      <div class="swatches">
+        <span style="background:#f6b92b;color:#2b1a10">Barnyard yellow</span>
+        <span style="background:#d8412a;color:#fff">Tomato</span>
+        <span style="background:#fff5df;color:#2b1a10">Oat</span>
+        <span style="background:#2f7d57;color:#fff">Paddock</span>
+        <span style="background:#2b1a10;color:#f6b92b">Mud</span>
+      </div>
+      <div class="hero">
+        <div class="nav"><span>Horse</span><span>Dog</span><span>Pets &amp; Poultry</span><span>Dog Den</span><span>Delivery</span></div>
+        <h2>Every animal welcome. <span>Yes, even that one.</span></h2>
+        <p>Feed, bedding, toys and treats for the whole gang. Family run, open seven days, with a ball pit for the dog next door.</p>
+        <div><a class="btn">Order for delivery</a><a class="btn alt">Book the Dog Den</a></div>
+        <svg class="an peek" style="--a:#c9502a;--b:#8e3418;--c:#fff5df;--k:#2b1a10;--t:#fff"><use href="#horse"/></svg>
+      </div>
+      <div class="notes">
+        <h3>The idea</h3>
+        Their own logo, grown up. The same gang of animals peeking over the sign, redrawn as one simple matching set, on the yellow people already recognise. Type is <em>Bagel Fat One</em> with <em>DM Sans</em>.
+        <h3>How the fun shows up</h3>
+        The animals become a kit of characters that pop up everywhere: peeking round page edges, on bags, on the van, as stickers for kids at the till.
+        <h3>Why it works</h3>
+        The easiest yes for the owners, because it is clearly still them, only better. The story writes itself: "we kept your animals and drew them properly."
+        <h3>Risk</h3>
+        The least dramatic change of the three.
+      </div>
+    </section>
+
+    <section class="dir dB">
+      <div class="label"><b>B · Serious feed, silly animals</b></div>
+      <div class="logo">
+        <div class="stampwrap">
+          <svg class="an horse" style="--a:#f1e9d6;--b:#d9a441;--c:#d9a441;--k:#1f3a2c;--t:#f1e9d6"><use href="#horse"/></svg>
+          <svg class="an dog" style="--a:#f1e9d6;--b:#d9a441;--c:#fff;--k:#1f3a2c;--t:#c9411f"><use href="#dog"/></svg>
+          <svg class="an hen" style="--a:#f1e9d6;--b:#d9a441;--c:#fff;--k:#1f3a2c;--t:#c9411f"><use href="#hen"/></svg>
+          <div class="stamp"><div>
+            <div class="word">BARNYARD</div>
+            <div class="rule">NORTHWICH · CHESHIRE</div>
+            <div class="sub">Pet · Horse · Smallholder</div>
+          </div></div>
+        </div>
+      </div>
+      <div class="swatches">
+        <span style="background:#1f3a2c;color:#f1e9d6">Barn green</span>
+        <span style="background:#f1e9d6;color:#1f3a2c">Feed sack</span>
+        <span style="background:#c9411f;color:#fff">Tomato</span>
+        <span style="background:#f2b632;color:#1f3a2c">Barnyard yellow</span>
+        <span style="background:#20211e;color:#f1e9d6">Tar</span>
+      </div>
+      <div class="hero">
+        <div class="nav"><span>Horse</span><span>Dog</span><span>Pets &amp; Poultry</span><span>Dog Den</span><span>Delivery</span></div>
+        <h2>Serious about feed. <span>Silly about animals.</span></h2>
+        <p>A dozen horse feed brands, bedding by the pallet, and a ball pit for the dog.</p>
+        <div><a class="btn">Order for delivery</a><a class="btn alt">Find the shop</a></div>
+        <div class="sticker s1">Muddy paws welcome</div>
+        <div class="sticker s2">Ball pit next door!</div>
+      </div>
+      <div class="notes">
+        <h3>The idea</h3>
+        Round one's Feed Merchant look, loosened up. The stamped lettering stays, but animals climb over it, stickers get slapped on at angles, and the copy has jokes. Type is <em>Besley</em> with <em>Work Sans</em>.
+        <h3>How the fun shows up</h3>
+        In the contrast: a proper merchant's label that the animals keep interrupting.
+        <h3>Why it works</h3>
+        Speaks to both audiences at once. Horse owners see expertise, dog owners see personality.
+        <h3>Risk</h3>
+        Green and cream is a bigger departure from the yellow they have now.
+      </div>
+    </section>
+
+    <section class="dir dC">
+      <div class="label"><b>C · Animal Noises</b></div>
+      <div class="logo">
+        <div class="bubble"><div class="word">Barnyard</div></div>
+        <div class="sub">Woof. Neigh. Cluck. Come in.</div>
+      </div>
+      <div class="swatches">
+        <span style="background:#2447d6;color:#fff">Cobalt</span>
+        <span style="background:#f24a2e;color:#fff">Tomato</span>
+        <span style="background:#f6b92b;color:#16181f">Yellow</span>
+        <span style="background:#f7a8c0;color:#16181f">Pig pink</span>
+        <span style="background:#1f8a5b;color:#fff">Grass</span>
+      </div>
+      <div class="hero">
+        <div class="noises">
+          <div class="noise" style="background:#f6b92b">Neigh.<svg class="an" style="--a:#16181f;--b:#16181f;--c:#f6b92b;--k:#f6b92b;--t:#f6b92b"><use href="#horse"/></svg></div>
+          <div class="noise" style="background:#f24a2e;color:#fff">Woof.<svg class="an" style="--a:#fff;--b:#16181f;--c:#fff;--k:#16181f;--t:#f24a2e"><use href="#dog"/></svg></div>
+          <div class="noise" style="background:#f7a8c0">Cluck.<svg class="an" style="--a:#fff;--b:#f6b92b;--c:#fff;--k:#16181f;--t:#f24a2e"><use href="#hen"/></svg></div>
+          <div class="noise" style="background:#1f8a5b;color:#fff">Oink.<svg class="an" style="--a:#f7a8c0;--b:#f28aa8;--c:#fff;--k:#16181f;--t:#fff"><use href="#pig"/></svg></div>
+        </div>
+        <div class="txt">
+          <h2>Whatever noise it makes, we feed it.</h2>
+          <p>Pet, horse and smallholder supplies in Northwich. Open seven days.</p>
+          <div><a class="btn">Shop by animal</a><a class="btn alt">Book the Dog Den</a></div>
+        </div>
+      </div>
+      <div class="notes">
+        <h3>The idea</h3>
+        Loud, modern and led by words. Each animal gets its own colour and its own noise, and the logo is a speech bubble. Type is <em>Bricolage Grotesque</em> with <em>DM Sans</em>.
+        <h3>How the fun shows up</h3>
+        In big, bold colour blocks and one running joke that works on everything from shop signs to social posts.
+        <h3>Why it works</h3>
+        The most memorable and the most "designed". It makes navigation simple too: pick your animal's colour.
+        <h3>Risk</h3>
+        The furthest from what they have, and the least countryside in feel. Could read as a city pet brand.
+      </div>
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
